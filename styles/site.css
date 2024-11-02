@@ -75,3 +75,21 @@ body {
     .quiz-item:hover {
         background-color: #0056b3;
     }
+
+.quiz-prompt {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.result-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin: 0 auto 20px;
+}

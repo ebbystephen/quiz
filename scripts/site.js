@@ -78,8 +78,13 @@ function showResult() {
   document.getElementById('quiz-container').style.display = 'none';
   const result = document.getElementById('result');
   result.style.display = 'block';
-  result.innerHTML = `You answered ${correctAnswers} out of ${quizzes[currentQuizIndex].questions.length} questions correctly.<br><a href="#" onclick="goToMainPage()">Go to main page</a>`;
+  result.innerHTML = `
+    <div class="result-circle">${correctAnswers}/${quizzes[currentQuizIndex].questions.length}</div>
+    <div>You answered ${correctAnswers} out of ${quizzes[currentQuizIndex].questions.length} questions correctly.</div>
+    <br><a href="#" onclick="goToMainPage()">Go to main page</a>
+  `;
 }
+
 
 function goToMainPage() {
   document.getElementById('result').style.display = 'none';
