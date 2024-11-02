@@ -63,6 +63,10 @@ function selectOption(selectedOption, button) {
   const quiz = quizzes[currentQuizIndex];
   const question = quiz.questions[currentQuestionIndex];
   const nextButton = document.getElementById('next-button');
+  const optionButtons = document.querySelectorAll('#options button');
+
+  // Disable all option buttons
+  optionButtons.forEach(btn => btn.disabled = true);
   
   if (selectedOption === question.answer) {
     correctAnswers++;
@@ -95,8 +99,9 @@ function nextQuestion() {
 function showResult() {
   const quiz = quizzes[currentQuizIndex];
   document.getElementById('quiz-container').style.display = 'none';
-  const result = document.getElementById('result-container');
+  const result = document.getElementById('result');
   result.style.display = 'block';
+  document.getElementById('result-container').style.display = 'block';
    result.innerHTML = `
     <div class="result-title">${quiz.title}</div>
     <div class="result-circle">${correctAnswers}/${quiz.questions.length}</div>
@@ -108,6 +113,7 @@ function showResult() {
 
 
 function goToMainPage() {
+  document.getElementById('result').style.display = 'none';
   document.getElementById('result-container').style.display = 'none';
   document.getElementById('quiz-list').style.display = 'block';  
   document.getElementById('quiz-prompt').style.display = 'block'; // Show the prompt
