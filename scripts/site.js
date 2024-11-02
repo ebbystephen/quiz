@@ -42,8 +42,10 @@ function loadQuestion() {
   options.innerHTML = '';
   question.options.forEach(option => {
     const optionItem = document.createElement('li');
-    optionItem.textContent = option;
-    optionItem.onclick = () => selectOption(option);
+    const optionButton = document.createElement('button');
+    optionButton.textContent = option;
+    optionButton.onclick = () => selectOption(option, optionButton);
+    optionItem.appendChild(optionButton);
     options.appendChild(optionItem);
   });
 }
@@ -53,8 +55,13 @@ function selectOption(selectedOption) {
   const question = quiz.questions[currentQuestionIndex];
   if (selectedOption === question.answer) {
     correctAnswers++;
+  button.style.backgroundColor = 'green';
+    button.style.color = 'white';
+  } else {
+    button.style.backgroundColor = 'red';
+    button.style.color = 'white';
   }
-  nextQuestion();
+  setTimeout(nextQuestion, 1000);
 }
 
 function nextQuestion() {
