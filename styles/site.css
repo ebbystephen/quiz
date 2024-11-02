@@ -4,8 +4,8 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Change to column to stack header and container vertically */
+    align-items: center; /* Center items horizontally */
     height: 100vh;
 }
 
@@ -17,6 +17,7 @@ body {
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+    margin-top: 20px; /* Add margin to separate from header */
 }
 
 .quiz-title {
