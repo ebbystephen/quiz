@@ -2,6 +2,7 @@ let quizzes = [];
 let currentQuizIndex = 0;
 let currentQuestionIndex = 0;
 let correctAnswers = 0;
+let shareText='';
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('quizzes.json')
@@ -94,7 +95,7 @@ function nextQuestion() {
 function showResult() {
   const quiz = quizzes[currentQuizIndex];
   document.getElementById('quiz-container').style.display = 'none';
-  const result = document.getElementById('result');
+  const result = document.getElementById('result-container');
   result.style.display = 'block';
    result.innerHTML = `
     <div class="result-title">${quiz.title}</div>
@@ -102,11 +103,12 @@ function showResult() {
     <div>You answered ${correctAnswers} out of ${quiz.questions.length} questions correctly.</div>
     <br><a href="#" onclick="goToMainPage()">Go to main page</a>
   `;
+  shareText = `I scored ${correctAnswers} out of ${quiz.questions.length} in the ${quiz.title} quiz!`;
 }
 
 
 function goToMainPage() {
-  document.getElementById('result').style.display = 'none';
+  document.getElementById('result-container').style.display = 'none';
   document.getElementById('quiz-list').style.display = 'block';  
   document.getElementById('quiz-prompt').style.display = 'block'; // Show the prompt
 }
@@ -134,3 +136,33 @@ function closeModal() {
   }
   document.getElementById('popup-modal').style.display = 'none';
 }
+
+document.getElementById('share-button').addEventListener('click', function() {
+    //const text = "This is the text to be converted into an image";
+    const canvas = document.getElementById('text-canvas');
+    const context = canvas.getContext('2d');
+    
+    // Set canvas dimensions
+    canvas.width = 400;
+    canvas.height = 200;
+    
+    // Set background color
+    context.fillStyle = '#fff';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Set text properties
+    context.fillStyle = '#000';
+    context.font = '20px Arial';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    
+    // Draw text on canvas
+    context.fillText(shareText, canvas.width / 2, canvas.height / 2);
+    
+    // Convert canvas to data URL
+    const imageUrl = canvas.toDataURL('image/png');
+    
+    // Create a link to share the image
+    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent('Check out this achievement: ' + imageUrl)}`;
+    window.open(whatsappUrl, '_blank');
+});
