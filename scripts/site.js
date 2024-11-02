@@ -55,6 +55,8 @@ function loadQuestion() {
 function selectOption(selectedOption, button) {
   const quiz = quizzes[currentQuizIndex];
   const question = quiz.questions[currentQuestionIndex];
+  const nextButton = document.getElementById('next-button');
+  
   if (selectedOption === question.answer) {
     correctAnswers++;
   button.style.backgroundColor = 'green';
@@ -63,7 +65,14 @@ function selectOption(selectedOption, button) {
     button.style.backgroundColor = 'red';
     button.style.color = 'white';
   }
-  setTimeout(nextQuestion, 1000);
+  
+  // Disable the next button
+  nextButton.disabled = true;
+
+ setTimeout(() => {
+    nextButton.disabled = false;
+    nextQuestion();
+  }, 1000);
 }
 
 function nextQuestion() {
