@@ -54,6 +54,20 @@ function loadQuestion() {
     optionItem.appendChild(optionButton);
     options.appendChild(optionItem);
   });
+
+  // Disable options if the question has already been answered
+  const optionButtons = document.querySelectorAll('#options button');
+  optionButtons.forEach(btn => {
+    if (btn.textContent === question.answer) {
+      btn.disabled = true;
+      btn.style.backgroundColor = 'green';
+      btn.style.color = 'white';
+    } else {
+      btn.disabled = true;
+      btn.style.backgroundColor = 'red';
+      btn.style.color = 'white';
+    }
+  });
  
   // Update the question ordinal display
   document.getElementById('question-ordinal').textContent = `Question ${currentQuestionIndex + 1} of ${quiz.questions.length}`;
@@ -93,6 +107,13 @@ function nextQuestion() {
     loadQuestion();
   } else {
     showResult();
+  }
+}
+
+function previousQuestion() {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--;
+    loadQuestion();
   }
 }
 
