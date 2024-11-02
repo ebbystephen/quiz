@@ -1,32 +1,37 @@
 {
   "quizzes": [
     {
-      "title": "General Knowledge",
+      "title": "Chapter 5 Part 2",
       "questions": [
         {
-          "question": "What is the capital of France?",
-          "options": [ "Paris", "London", "Berlin", "Madrid" ],
-          "answer": "Paris"
+          "question": "തിന്മകൾക്കെതിരെ പോരാടാനുള്ള ശക്തി നമുക്ക് ലഭിക്കുന്നത് ഏത് കൂദാശയിലൂടെയാണ്?",
+          "options": [ "മാമ്മോദീസ", "തൈലാഭിഷേകം", "രോഗിലേപനം" ],
+          "answer": "തൈലാഭിഷേകം"
         },
         {
-          "question": "Who wrote 'To Kill a Mockingbird'?",
-          "options": [ "Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald" ],
-          "answer": "Harper Lee"
-        }
-      ]
-    },
-    {
-      "title": "Science",
-      "questions": [
-        {
-          "question": "What is the chemical symbol for water?",
-          "options": [ "H2O", "O2", "CO2", "NaCl" ],
-          "answer": "H2O"
+          "question": "തൈലാഭിഷേകം വഴി നമുക്ക് എന്തൊക്കെയാണ് ലഭിക്കുന്നത്?",
+          "options": [ "പരിശുദ്ധാത്മാവിന്റെ വരങ്ങളും ദാനങ്ങളും", "നല്ല സ്നേഹിതരെ", "ദൈവരാജ്യ പ്രചരണത്തിന് സഹായിക്കുന്നു" ],
+          "answer": "പരിശുദ്ധാത്മാവിന്റെ വരങ്ങളും ദാനങ്ങളും"
         },
         {
-          "question": "What planet is known as the Red Planet?",
-          "options": [ "Mars", "Venus", "Jupiter", "Saturn" ],
-          "answer": "Mars"
+          "question": "മാമ്മോദീസ, തൈലാഭിഷേകം, വി.കുർബാന എന്നീ കൂദാശകളെ .......... കൂദാശകൾ എന്നാണ് വിളിക്കുന്നത്.",
+          "options": [ "ശുശ്രൂഷ കൂദാശകൾ", "സൗഖ്യദായക കൂദാശകൾ", "പ്രവേശക കൂദാശകൾ" ],
+          "answer": "പ്രവേശക കൂദാശകൾ"
+        },
+        {
+          "question": "തൈലാഭിഷേകം എന്ന കൂദാശ വഴി മായാത്ത മുദ്ര പതിപ്പിക്കുന്നത് എവിടെ ?",
+          "options": [ "ശിരസ്സിൽ", "ആത്മാവിൽ", "ഉള്ളംകൈയിൽ" ],
+          "answer": "ആത്മാവിൽ"
+        },
+        {
+          "question": "എന്റെ ദൈവവിളി സ്നേഹമാകുന്നു .ഈശോ സ്നേഹകട്ടയാകുന്നു. ഈ വാക്കുകൾ പറഞ്ഞത് ആരാണ്",
+          "options": [ "മദർ തെരേസ", "വി. അൽഫോൻസ", "വി.കൊച്ചുത്രേസ്യ" ],
+          "answer": "വി.കൊച്ചുത്രേസ്യ"
+        },
+        {
+          "question": "പരിശുദ്ധാത്മാവിന്റെ ദാനങ്ങൾ എത്ര ? ഏതെല്ലാം ?",
+          "options": [ "അഞ്ച്", "ആറ്", "ഏഴ്" ],
+          "answer": "ഏഴ്"
         }
       ]
     }
