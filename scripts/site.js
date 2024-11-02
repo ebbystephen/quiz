@@ -99,7 +99,8 @@ function showResult() {
 
 function goToMainPage() {
   document.getElementById('result').style.display = 'none';
-  document.getElementById('quiz-list').style.display = 'block';
+  document.getElementById('quiz-list').style.display = 'block';  
+  document.getElementById('quiz-prompt').style.display = 'block'; // Show the prompt
 }
 
 function shuffleArray(array) {
