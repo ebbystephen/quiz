@@ -17,8 +17,8 @@ function displayQuizList() {
   const quizList = document.getElementById('quiz-list');
   quizList.innerHTML = '';
   quizzes.forEach((quiz, index) => {
-    const quizItem = document.createElement('div');
-    quizItem.textContent = quiz.title;
+    const quizItem = document.createElement('div');    
+    quizItem.textContent = `${quiz.title} (${quiz.questions.length} questions)`;
     quizItem.classList.add('quiz-item');
     quizItem.onclick = () => startQuiz(index);
     quizList.appendChild(quizItem);
@@ -38,7 +38,10 @@ function startQuiz(index) {
 function loadQuestion() {
   const quiz = quizzes[currentQuizIndex];
   const question = quiz.questions[currentQuestionIndex];
-  document.getElementById('quiz-title').textContent = quiz.title;
+  document.getElementById('quiz-title').innerHTML = `
+    <span id="quiz-title-text">${quiz.title}</span>
+    <span id="question-count"> (${quiz.questions.length} questions)</span>
+  `;
   document.getElementById('question').textContent = question.question;
   const options = document.getElementById('options');
   options.innerHTML = '';
