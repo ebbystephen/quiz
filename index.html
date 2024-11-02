@@ -17,12 +17,13 @@
             <div class="quiz-title" id="quiz-title"></div>
             <div class="question" id="question"></div>
             <ul class="options" id="options"></ul>
+            <button id="previous-button" onclick="previousQuestion()">Previous</button>
             <button id="next-button" onclick="nextQuestion()">Next</button>
             <div id="question-ordinal" class="question-ordinal"></div>
         </div>
         <div id="result-container" style="display: none;">
             <div class="result" id="result"></div>
-            <button id="share-button">Generate Image and Share on WhatsApp</button>
+            <button id="share-button" style="display:none;">Generate Image and Share on WhatsApp</button>
             <canvas id="text-canvas" style="display:none;"></canvas>
         </div>
     </div>
