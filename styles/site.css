@@ -146,3 +146,22 @@ body {
     font-size: 1.2em;
     color: #555;
 }
+
+header {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Georgia', serif; /* Change the font family */
+    font-size: 2em; /* Change the font size */
+    font-weight: bold; /* Make the font bold */
+    color: #333; /* Change the font color */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

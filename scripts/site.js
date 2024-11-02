@@ -92,12 +92,14 @@ function nextQuestion() {
 }
 
 function showResult() {
+  const quiz = quizzes[currentQuizIndex];
   document.getElementById('quiz-container').style.display = 'none';
   const result = document.getElementById('result');
   result.style.display = 'block';
-  result.innerHTML = `
-    <div class="result-circle">${correctAnswers}/${quizzes[currentQuizIndex].questions.length}</div>
-    <div>You answered ${correctAnswers} out of ${quizzes[currentQuizIndex].questions.length} questions correctly.</div>
+   result.innerHTML = `
+    <div class="result-title">${quiz.title}</div>
+    <div class="result-circle">${correctAnswers}/${quiz.questions.length}</div>
+    <div>You answered ${correctAnswers} out of ${quiz.questions.length} questions correctly.</div>
     <br><a href="#" onclick="goToMainPage()">Go to main page</a>
   `;
 }
