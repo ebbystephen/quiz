@@ -53,6 +53,9 @@ function loadQuestion() {
     optionItem.appendChild(optionButton);
     options.appendChild(optionItem);
   });
+ 
+  // Update the question ordinal display
+  document.getElementById('question-ordinal').textContent = `Question ${currentQuestionIndex + 1} of ${quiz.questions.length}`;
 }
 
 function selectOption(selectedOption, button) {

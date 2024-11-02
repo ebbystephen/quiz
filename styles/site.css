@@ -141,3 +141,8 @@ body {
     text-align: left;
 }
 
+.question-ordinal {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #555;
+}
