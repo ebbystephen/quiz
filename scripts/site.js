@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       quizzes = data.quizzes;
       displayQuizList();
+      showModal(); // Show the modal on page load
     });
 });
 
@@ -28,6 +29,7 @@ function startQuiz(index) {
   currentQuizIndex = index;
   currentQuestionIndex = 0;
   correctAnswers = 0;
+  document.getElementById('quiz-prompt').style.display = 'none'; // Hide the prompt
   document.getElementById('quiz-list').style.display = 'none';
   document.getElementById('quiz-container').style.display = 'block';
   loadQuestion();
@@ -97,4 +99,20 @@ function shuffleArray(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+}
+
+
+function showModal() {
+  const dontShowAgain = localStorage.getItem('dontShowPopup');
+  if (!dontShowAgain) {
+    document.getElementById('popup-modal').style.display = 'block';
+  }
+}
+
+function closeModal() {
+  const dontShowAgainCheckbox = document.getElementById('dont-show-again');
+  if (dontShowAgainCheckbox.checked) {
+    localStorage.setItem('dontShowPopup', 'true');
+  }
+  document.getElementById('popup-modal').style.display = 'none';
 }

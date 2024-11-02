@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Application</title>
-    <link rel="stylesheet" href="styles/site.css?v=1.2" type="text/css" />
+    <link rel="stylesheet" href="styles/site.css?v=1.3" type="text/css" />
 </head>
 <body>
     <div class="quiz-container">
@@ -19,6 +19,18 @@
         <div class="result" id="result" style="display: none;"></div>
     </div>
 
-    <script src="scripts/site.js?v=1.3"></script>
+    <!-- Modal -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <img src="images/img01.jpeg" alt="Popup Image" class="popup-image">
+            <div class="checkbox-container">
+                <input type="checkbox" id="dont-show-again" />
+                <label for="dont-show-again">Do not display this message again</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/site.js?v=1.4"></script>
 </body>
 </html>
