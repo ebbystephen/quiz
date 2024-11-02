@@ -60,3 +60,18 @@ body {
     margin-top: 20px;
     text-align: center;
 }
+
+.quiz-item {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    .quiz-item:hover {
+        background-color: #0056b3;
+    }

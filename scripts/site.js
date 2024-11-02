@@ -50,7 +50,7 @@ function loadQuestion() {
   });
 }
 
-function selectOption(selectedOption) {
+function selectOption(selectedOption, button) {
   const quiz = quizzes[currentQuizIndex];
   const question = quiz.questions[currentQuestionIndex];
   if (selectedOption === question.answer) {
