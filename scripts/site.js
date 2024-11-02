@@ -40,7 +40,7 @@ function loadQuestion() {
   document.getElementById('question').textContent = question.question;
   const options = document.getElementById('options');
   options.innerHTML = '';
-  question.options.forEach(option => {
+  shuffleArray(question.options).forEach(option => {
     const optionItem = document.createElement('li');
     const optionButton = document.createElement('button');
     optionButton.textContent = option;
@@ -78,5 +78,18 @@ function showResult() {
   document.getElementById('quiz-container').style.display = 'none';
   const result = document.getElementById('result');
   result.style.display = 'block';
-  result.textContent = `You answered ${correctAnswers} out of ${quizzes[currentQuizIndex].questions.length} questions correctly.`;
+  result.innerHTML = `You answered ${correctAnswers} out of ${quizzes[currentQuizIndex].questions.length} questions correctly.<br><a href="#" onclick="goToMainPage()">Go to main page</a>`;
+}
+
+function goToMainPage() {
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('quiz-list').style.display = 'block';
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
